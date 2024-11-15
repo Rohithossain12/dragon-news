@@ -5,6 +5,8 @@ import Category from "../components/layout-components/Category";
 import About from "../components/layout-components/About";
 import Career from "../components/layout-components/Career";
 import AuthLayout from "../components/layout-components/AuthLayout";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
         element: <Category></Category>,
-        loader: ({params}) =>
-          fetch(` https://openapi.programming-hero.com/api/news/category/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            ` https://openapi.programming-hero.com/api/news/category/${params.id}`
+          ),
       },
     ],
   },
@@ -36,17 +40,16 @@ const router = createBrowserRouter([
   {
     path: "/auth",
     element: <AuthLayout></AuthLayout>,
-    children:[
-   {
-    path:"/auth/login",
-    element:<h2>Login</h2>
-   },
-   {
-    path:"/auth/register",
-    element:<h2>Register</h2>
-   }
-
-    ]
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+    ],
   },
 ]);
 
