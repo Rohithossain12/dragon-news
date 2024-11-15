@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { FaEye, FaShareAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
   console.log(news);
@@ -44,9 +45,9 @@ const NewsCard = ({ news }) => {
       {/* Card Content */}
       <div className="px-4 pb-4 text-sm text-gray-700">
         {details.slice(0, 150)}...
-        <a href="#" className="text-blue-500 hover:underline ml-1">
+        <Link to={`/news/${news._id}`} className="text-blue-500 hover:underline ml-1">
           Read More
-        </a>
+        </Link>
       </div>
 
       {/* Card Footer */}
