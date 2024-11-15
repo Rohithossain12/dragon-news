@@ -4,7 +4,7 @@ import { FaEye, FaShareAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
-  console.log(news);
+
 
   const { title, author, rating, total_view, image_url, details, others_info } =
     news;
